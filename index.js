@@ -8,7 +8,7 @@ const { json } = pkg;
 const app = express();
 app.use(express.static('public'));
 app.use(json());
-app.use(cors({ origin:true, credentials: true }));
+app.use(cors());
 
 
 
