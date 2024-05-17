@@ -5,9 +5,10 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
-app.use(cors({ origin:true, credentials: true }));
+// app.use(cors({ origin:true, credentials: true }));
+app.use(cors());
 
 
 const port = process.env.PORT;
