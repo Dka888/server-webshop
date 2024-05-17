@@ -1,6 +1,17 @@
-import express from 'express'
-const app = express()
-const port = 3000
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+require('dotenv').config();
+
+const app = express();
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors({ origin:true, credentials: true }));
+
+
+const port = process.env.PORT;
+const stripeSekretKey = process.env.STRIPE_SEKRET_KEY;
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
